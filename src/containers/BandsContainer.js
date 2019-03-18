@@ -26,11 +26,13 @@ class BandsContainer extends Component {
     );
   }
 }
-
-const mapDispatchToProps = dispatch => ({
-  createBand: bandName =>
-    dispatch({ type: "ADD_BAND", band: { name: bandName } })
-});
+// a function that returns an object that "contains" a function
+const mapDispatchToProps = dispatch => {
+  return {
+    createBand: bandName =>
+      dispatch({ type: "ADD_BAND", band: { name: bandName } })
+  }
+};
 
 export default connect(
   state => ({ bands: state.bands }),

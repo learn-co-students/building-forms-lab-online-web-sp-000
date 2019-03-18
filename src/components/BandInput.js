@@ -20,7 +20,6 @@ class BandInput extends Component {
         <input
           type="text"
           onChange={this.onChange}
-          name="name"
           value={this.state.name}
         />
         <input type="submit" value="Save" />
