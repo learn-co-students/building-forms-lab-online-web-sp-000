@@ -5,26 +5,34 @@ import BandInput from "../components/BandInput";
 class BandsContainer extends Component {
   onSubmit = event => {
     event.preventDefault();
-    this.props.dispatch({ type: "ADD_BAND", band: {name: this.state.name} });
+    this.props.dispatch({ type: "ADD_BAND", band: { name: this.state.name } });
   };
 
-  onTextChange = event => {
-    this.setState({ name: event.target.value });
+  onChange = event => {
+    this.setState({ name: event.target.value }, () => console.log(this.state));
   };
 
   renderBands = () =>
     this.props.bands.map((band, i) => {
-      return <li key={i}>{`${band.name}`}</li>;
+      return <li key={i}>{band.name}</li>;
     });
 
   render() {
     return (
       <div>
-        <BandInput onSubmit={this.onSubmit} onChange={this.onTextChange} />
+        <BandInput createBand={this.props.createBand} />
         <ul>{this.renderBands()}</ul>
       </div>
     );
   }
 }
 
-export default connect(state => ({ bands: state.bands }))(BandsContainer);
+const mapDispatchToProps = dispatch => ({
+  createBand: bandName =>
+    dispatch({ type: "ADD_BAND", band: { name: bandName } })
+});
+
+export default connect(
+  state => ({ bands: state.bands }),
+  mapDispatchToProps
+)(BandsContainer);

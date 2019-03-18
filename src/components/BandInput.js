@@ -3,36 +3,30 @@ import { connect } from "react-redux";
 
 class BandInput extends Component {
   state = { name: "" };
-  // handleSubmit = event => {
-  //   event.preventDefault();
-  //   this.props.dispatch({ type: "ADD_BAND", band: this.state.name })
-  // };
 
-  handleChange = e => {
-    this.setState({ name: e.target.value });
+  onSubmit = event => {
+    event.preventDefault();
+    this.props.createBand(this.state.name);
+    this.setState({ name: "" });
   };
 
-  onTextChange = event => {
-    this.setState({ name: event.target.value });
+  onChange = event => {
+    this.setState({ name: event.target.value }, () => console.log(this.state));
   };
 
   render() {
     return (
-      <div>
-        Enter a band name:
-        {/* <form onSubmit={this.handleSubmit}> */}
-        <form onSubmit={this.props.onSubmit}>
-          <input
-            type="text"
-            onChange={this.props.onChange}
-            // onChange={this.onTextChange}
-            // value={this.state.text}
-          />
-          <input type="submit" value="Save" />
-        </form>
-      </div>
+      <form onSubmit={this.onSubmit}>
+        <input
+          type="text"
+          onChange={this.onChange}
+          name="name"
+          value={this.state.name}
+        />
+        <input type="submit" value="Save" />
+      </form>
     );
   }
 }
 
-export default BandInput
+export default BandInput;
