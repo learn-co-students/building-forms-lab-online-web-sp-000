@@ -20,6 +20,10 @@ class BandInput extends Component {
   //   this.setState({ name: e.target.value });
   // };
 
+  onTextChange = event => {
+    this.setState({ name: event.target.value });
+  };
+
   render() {
     return (
       <div>
@@ -29,8 +33,8 @@ class BandInput extends Component {
           <input
             type="text"
             onChange={this.props.onChange}
-            // onChange={this.handleChange}
-            value={this.props.text}
+            // onChange={this.onTextChange}
+            // value={this.state.text}
           />
           <input type="submit" value="Save" />
         </form>
@@ -39,4 +43,4 @@ class BandInput extends Component {
   }
 }
 
-export default connect()(BandInput);
+export default BandInput

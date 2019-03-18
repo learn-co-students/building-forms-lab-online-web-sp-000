@@ -3,10 +3,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class BandList extends Component {
-  renderBands = () => {
-    return this.props.bands.map((band, i)=> <li key={i}>{band}</li>);
-  };
+  renderBands = () =>
+    this.props.bands.map((band, i) => <li key={i}>{band}</li>);
 
+  renderTodos = () =>
+    this.props.todos.map((todo, id) => <Todo key={id} text={todo} />);
+    
   render() {
     return (
       <div>

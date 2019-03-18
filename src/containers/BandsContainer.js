@@ -4,32 +4,28 @@ import BandInput from "../components/BandInput";
 import BandList from "../components/BandList";
 
 class BandsContainer extends Component {
-  state = { name: "" };
-
   onSubmit = event => {
     event.preventDefault();
-    // This line below throws an unknown error ("Reach doesn't know what it was")
-    // let name = event.target[0].value
-    const x = this;
-    this.props.dispatch({ type: "ADD_BAND", band: this.state.name });
+    this.props.dispatch({ type: "ADD_BAND", band: {name: this.state.name} });
   };
 
-  onTextChange = e => {
-    // let x = this
-    this.setState({ name: e.target.value }, () => {
-      let text = this.state.name;
-      console.log(text);
-    });
+  onTextChange = event => {
+    this.setState({ name: event.target.value });
   };
+
+  renderBands = () =>
+    this.props.bands.map((band, i) => {
+      return <li key={i}>{`${band.name}`}</li>;
+    });
 
   render() {
     return (
       <div>
-        <BandInput onSubmit={this.onSubmit} onChange={this.onTextChange} text={this.state.text} />
-        <BandList />
+        <BandInput onSubmit={this.onSubmit} onChange={this.onTextChange} />
+        <ul>{this.renderBands()}</ul>
       </div>
     );
   }
 }
 
-export default connect()(BandsContainer);
+export default connect(state => ({ bands: state.bands }))(BandsContainer);
