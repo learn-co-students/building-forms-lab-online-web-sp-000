@@ -1,12 +1,13 @@
 import React from 'react'
 
 const Bands = props => {
-  const bands = props.bands.map(band => {
-    return <li>{band.name}</li>
-  })
+  const bands = props.bands.map((band, idx) => <li key={idx}>{band.name}</li>)
+
   return(
     <div>
-      {Bands}
+      <ul>
+      {bands}
+      </ul>
     </div>
   )
 }
