@@ -27,7 +27,7 @@ describe('BandInput component', () => {
 
   it('changes the local state on input change', () => {
     const wrapper = shallow(<BandInput />)
-    expect(wrapper.state('name'), "BandInput should mount with this.state.text equal to ''").to.equal('')
+    expect(wrapper.state('name'), "BandInput should mount with this.state.name equal to ''").to.equal('')
     let input = wrapper.find('input').first()
     input.simulate('change', { target: { value: 'Hello' } })
     expect(wrapper.state('name'), "BandInput state did not contain the correct value").to.equal('Hello')
