@@ -27,6 +27,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     addBand: (formData) => {
+      console.log('mapDispatchToProps', formData);
       dispatch({type: 'ADD_BAND', payload: formData})
     }
   }
