@@ -24,6 +24,7 @@ class BandInput extends Component {
   }
 
   render() {
+    
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -34,9 +35,19 @@ class BandInput extends Component {
           />
           <button type="submit">Submit</button>
         </form>
+        <ul>
+          {this.props.bands.map(band => {
+            return <li>{band}</li>
+          })}
+        </ul>
       </div>
+      
     )
   }
+}
+
+const mapStateToProps = state => {
+  return {bands: state.bands}
 }
 
 const mapDispatchToProps = dispatch => {
@@ -45,4 +56,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(BandInput)
+export default connect(mapStateToProps, mapDispatchToProps)(BandInput)
