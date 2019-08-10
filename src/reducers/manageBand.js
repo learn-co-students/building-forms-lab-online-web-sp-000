@@ -3,7 +3,8 @@ export default function manageBand(state = {
 }, action) {
   switch (action.type) {
     case 'ADD_BAND':
-      return {bands: [...state.bands, action.payload.name]}
+      console.log("in reducer", action.payload)
+      return {bands: [...state.bands, action.payload]}
     default:
       return state
   }
