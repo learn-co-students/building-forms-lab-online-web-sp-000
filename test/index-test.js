@@ -16,18 +16,22 @@ configure({ adapter: new Adapter() })
 describe('BandInput component', () => {
   it('has an text input field', () => {
     const wrapper = shallow(<BandInput />)
+    
     expect(wrapper.find('input').first().type()).to.equal('input');
   });
 
   it('has an initial state with name key set to empty string', () => {
     const wrapper = shallow(<BandInput />)
+    
     expect(wrapper.state(), "BandInput state was not found").to.exist
     expect(wrapper.state('name')).to.equal('')
   });
 
   it('changes the local state on input change', () => {
     const wrapper = shallow(<BandInput />)
+
     expect(wrapper.state('name'), "BandInput should mount with this.state.text equal to ''").to.equal('')
+    
     let input = wrapper.find('input').first()
     input.simulate('change', { target: { name: 'name', value: 'Hello' } })
     expect(wrapper.state('name'), "BandInput state did not contain the correct value").to.equal('Hello')
