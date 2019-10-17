@@ -18,6 +18,7 @@ class BandInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    //update the Redux store's state when the user hits the submit button
     this.props.addBand(this.state);
     this.setState({
       name: ''

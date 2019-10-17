@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+//BandInput component as a child of BandsContainer
 import BandInput from '../components/BandInput';
 
 class BandsContainer extends Component {
