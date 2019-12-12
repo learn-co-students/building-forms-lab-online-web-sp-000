@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BandsList = (props) => {
+const BandList = (props) => {
   return (
     <div>
       <ul>
@@ -12,4 +12,4 @@ const BandsList = (props) => {
   );
 };
 
-export default BandsList;
+export default BandList;
