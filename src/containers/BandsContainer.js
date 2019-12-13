@@ -19,4 +19,4 @@ const mapStateToProps = (state) => ({
   bands: state.bands
 });
 
-export default connect(mapStateToProps)(BandsContainer);
+export default connect(mapStateToProps, { addBand })(BandsContainer);
