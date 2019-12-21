@@ -21,6 +21,9 @@ export default class BandInput extends Component {
     // debugger
     event.preventDefault()
     this.props.addBand(this.state)
+    this.setState({
+      name: ''
+    })
   }
 
   render() {

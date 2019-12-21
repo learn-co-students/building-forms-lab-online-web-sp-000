@@ -5,7 +5,7 @@ export default function manageBand(state = {
   switch (action.type){
     case "ADD_BAND":
       console.log("The Bands Name Being Added Is: " + action.band.name)
-      debugger
+      // debugger
       return state = {
         bands: state.bands.concat(action.band)
       }
