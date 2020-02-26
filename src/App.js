@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import {connect} from 'react-redux'
 import BandsContainer from './containers/BandsContainer';
 
 class App extends Component {
