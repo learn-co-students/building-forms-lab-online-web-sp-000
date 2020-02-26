@@ -12,9 +12,8 @@ class BandsContainer extends Component {
         BandsContainer
         <BandInput addBand={addBand}/>
         <ul>
-          Hi there
-          {bands.map(band => <BandCard band={band}/>)}
-        <BandCard/>
+          
+         <BandCard bands={bands}/>
         </ul>
       </div>
     )

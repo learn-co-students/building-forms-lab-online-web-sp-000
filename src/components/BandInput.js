@@ -13,7 +13,7 @@ state = {
 
   handleOnSubmit = event => {
     event.preventDefault()
-    let newBand = this.state.name
+    let newBand = this.state
     this.props.addBand(newBand)
     this.setState({name: ""})
   }
@@ -34,4 +34,4 @@ state = {
   }
 }
 
-export default connect(null, {addBand})(BandInput);
+export default BandInput;
