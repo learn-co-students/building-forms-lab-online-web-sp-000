@@ -15,7 +15,7 @@ configure({ adapter: new Adapter() })
 
 describe('BandInput component', () => {
   it('has an text input field', () => {
-    const wrapper = shallow(<BandInput />)
+    const wrapper =   shallow(<BandInput />)
     expect(wrapper.find('input').first().type()).to.equal('input');
   });
 
