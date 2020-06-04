@@ -3,20 +3,14 @@ export default function manageBand(state = {
 }, action) {
   switch (action.type){
     case 'ADD_BAND':
-
-      if (action.newBand) {
-        console.log('in reducer, state', state);
-        console.log('in reducer, action', action)
-      }
-      //state.concat(action.band) //! error: is not a function
-      return state
+      // console.log('in reducer, state', state);
+      // console.log('in reducer, action', action)
+      //state.concat(action.band) 
+      console.log('reducer return', {...state, bands: [...state.bands, action.band]})
+      return {...state, bands: [...state.bands, action.band]}
 
     default:
       return state;
   }
-
-
-  //.concat(action.band)
-  return state
 
 };

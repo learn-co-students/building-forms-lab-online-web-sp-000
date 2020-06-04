@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BandInput } from '../components/BandInput'
 import manageBand from '../reducers/manageBand'
+import Bands from '../components/Bands'
 
 
 class BandsContainer extends Component {
@@ -11,27 +12,23 @@ class BandsContainer extends Component {
     return(
       <div>
         <BandInput addBand={this.props.addBand}/>
-        <div>
-          BandsContainer
-        </div>
+        <Bands bands={this.props.bands}/>
       </div>
     )
   }
 }
 
 
-const addBand = band => {
-  console.log('in action, band', band)
-  return {
-    type: 'ADD_BAND',
-    band
-  };
-};
+// const addBand = band => {
+//   console.log('in action, band', band)
+//   return {
+//     type: 'ADD_BAND',
+//     band
+//   };
+// };
 
-const mapDispatchToProps = dispatch => {
-  return {
-  addBand: band => dispatch(addBand(band))
-}}
+const mapDispatchToProps = dispatch => ({ addBand: band => dispatch({type: 'ADD_BAND', band}) })
+
 
 const mapStateToProps = (state) => {
   return {
