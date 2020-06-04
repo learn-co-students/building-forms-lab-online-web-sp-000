@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 export class BandInput extends Component {
  
   state = {
-    text: ''
+    name: ''
   }
   
   handleOnChange = event => {
@@ -22,16 +22,16 @@ export class BandInput extends Component {
 
     // Create band object from state
     let newBand = {};
-    newBand.name = this.state.text;
+    newBand.name = this.state.name;
 
     console.log('newBand', newBand); // logs out new band just before it is dispatched
     console.log('in BandInput container, this.props.addBand', this.props.addBand)
-    // Pass quote object to action creator
+    // Pass band object to action creator
     this.props.addBand(newBand)
 
     // Update component state to return to default state
     this.setState({
-      text: "" 
+      name: "" 
     })
   }
   
@@ -42,7 +42,7 @@ export class BandInput extends Component {
           <label htmlFor="name">Band Name</label>
           <input
             onChange={(event) => this.handleOnChange(event)}
-            name="text"
+            name="name"
             type="text"
             value={this.state.name}
           />
@@ -56,11 +56,3 @@ export class BandInput extends Component {
   }
 };
 
-// const mapStateToProps = (state) => {
-//   return {
-//     bands: state.bands
-//   };
-// };
-
-//export default connect(mapStateToProps)(BandInput);
-//export default BandInput
