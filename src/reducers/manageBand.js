@@ -5,10 +5,10 @@ export default function manageBand(state = {
     case 'ADD_BAND':
 
       if (action.newBand) {
-        console.log(state);
-        console.log('in reducer', action)
+        console.log('in reducer, state', state);
+        console.log('in reducer, action', action)
       }
-      //state.concat(action.band) //! is not a function
+      //state.concat(action.band) //! error: is not a function
       return state
 
     default:
