@@ -7,13 +7,9 @@ export class BandInput extends Component {
     name: ''
   }
   
-  handleOnChange = event => {
-    // Handle Updating Component State
-    const target = event.target
-    const value = target.value 
-    const name = target.name 
+  handleOnChange = event => { 
     this.setState({
-      [name]: value 
+      name: event.target.value 
     });
   }
 
