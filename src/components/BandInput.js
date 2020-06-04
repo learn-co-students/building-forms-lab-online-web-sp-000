@@ -20,7 +20,7 @@ export class BandInput extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
 
-    // Create quote object from state
+    // Create band object from state
     let newBand = {};
     newBand.name = this.state.text;
 
