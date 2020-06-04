@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import BandInput from '../components/BandInput'
+import { BandInput } from '../components/BandInput'
 import manageBand from '../reducers/manageBand'
 
 

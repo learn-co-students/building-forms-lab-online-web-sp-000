@@ -1,8 +1,7 @@
 // Add BandInput component
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
 
-class BandInput extends Component {
+export class BandInput extends Component {
  
   state = {
     text: ''
@@ -57,11 +56,11 @@ class BandInput extends Component {
   }
 };
 
-const mapStateToProps = (state) => {
-  return {
-    bands: state.bands
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     bands: state.bands
+//   };
+// };
 
-export default connect(mapStateToProps)(BandInput);
+//export default connect(mapStateToProps)(BandInput);
 //export default BandInput
