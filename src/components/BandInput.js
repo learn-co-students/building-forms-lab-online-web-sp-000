@@ -1,6 +1,6 @@
 // Add BandInput component
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+//import {connect} from 'react-redux';
 
 class BandInput extends Component {
 
@@ -37,16 +37,19 @@ class BandInput extends Component {
             id='input-box'
             type='text'
             onChange={(event) => this.handleChange(event)}
-            value={this.state.text}>
+            value={this.state.name}>
           </input>
-          <input
-            type='submit'>
-          </input>
+
+
+
         </form>
       </div>
     )
   }
 }
+// <input
+//   type='submit'>
+// </input>
 
 
 

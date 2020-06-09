@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import manageBand from '../reducers/manageBand';
+import Bands from '../components/Bands';
 import BandInput from '../components/BandInput';
+import { connect } from 'react-redux';
 
-const renderBands = () => props.manageBand.bands.map((band, id) => <li key={id}>{band}</li>);
 
 //1.define as an action creator: type and data. Creates an action based on data, and returns it.
 const addBandActionCreator = (bandObject) => {
@@ -27,9 +26,7 @@ class BandsContainer extends Component {
         </div>
         <div>
             BandsContainer
-            <ul id="band-container-list">
-              {this.renderBands()}
-            </ul>
+              <Bands bands={this.props.bands}/>
         </div>
       </div>
     )
