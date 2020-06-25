@@ -12,7 +12,7 @@ class BandsContainer extends Component {
           <ul>
             {this.props.bands.map(band => {
               return (
-                <li>{band.name}</li>
+                <li>Name: {band.name}</li>
               )
             })}
           </ul>

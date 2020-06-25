@@ -9,7 +9,7 @@ class BandInput extends Component {
 
   handleChange = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      name: event.target.value
     })
   }
 
@@ -30,7 +30,6 @@ class BandInput extends Component {
           <label>Band name: </label>
           <input
             type="text"
-            name="name"
             onChange={this.handleChange}
             value={this.state.name}
           />
