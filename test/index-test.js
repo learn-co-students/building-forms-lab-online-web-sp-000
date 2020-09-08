@@ -82,7 +82,6 @@ describe('Redux', () => {
 
     expect(store.getState().bands, "'bands' not found in the store").to.exist
     expect(store.getState().bands, "Initial state of 'bands' should be an empty array").to.be.empty
-
     input.simulate('change', { target: { value: 'Hello' } })
     form.simulate('submit',  { preventDefault() {} })
 
@@ -118,7 +117,7 @@ describe('Bands Container', () => {
     input.simulate('change', { target: { value: 'Gwar' } })
     form.simulate('submit',  { preventDefault() {} })
 
-    expect(store.getState().bands.length, "There are " + store.getState().bands.length + " bands in the store, but " + wrapper.find('li').length + "li elements").to.equal(wrapper.find('li').length)
+    expect(store.getState().bands.length, "There are " + store.getState().bands.length + " bands in the store, but " + wrapper.find('li').length + " li elements").to.equal(wrapper.find('li').length)
 
   });
 
