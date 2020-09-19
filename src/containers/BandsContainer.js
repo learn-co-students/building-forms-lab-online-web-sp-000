@@ -9,7 +9,7 @@ class BandsContainer extends Component {
     return(
       <div>
       <BandInput  addBand={this.props.addBand}/>
-    
+                        {console.log(this.props.addBand)}
       <ul>{this.props.bands.map((band) => {
         return <li>{band.name}</li>
       })}
@@ -18,10 +18,23 @@ class BandsContainer extends Component {
     )
   }
 }
- const addBand = band => {
+  const mapDispatchToProps = dispatch => {
    return {
-     type: 'ADD_BAND',
-     band: band
-   }
- }
- export default connect(state => ({ bands: state.bands }), addBand )(BandsContainer);
+  addBand: name => dispatch(              // we are returning key:value pair is name of our method to passing top props 
+                                          // 
+    
+    {type: 'ADD_BAND',
+
+    band: name // use this in the reducer case statement 
+  })
+  }
+ 
+  }
+
+
+
+
+
+
+
+ export default connect(state => ({ bands: state.bands }), mapDispatchToProps)(BandsContainer);
