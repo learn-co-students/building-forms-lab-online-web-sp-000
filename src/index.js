@@ -14,3 +14,7 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+// wiil be two different ract components 
+// each of them  
+// 
