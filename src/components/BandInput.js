@@ -8,7 +8,7 @@ class BandInput extends Component {
     name: ""
   }
 
-  handleClick = event => {
+  handleChange = event => {
     this.setState({
       name: event.target.value
     })
@@ -16,7 +16,7 @@ class BandInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.props);
+    // console.log(this.state.name);
     this.props.addBand(this.state.name);
 
     this.setState({
@@ -32,7 +32,7 @@ class BandInput extends Component {
             type="text"
             name="band-name"
             value={this.state.name}
-            onChange={this.handleClick}>
+            onChange={this.handleChange}>
           </input>
 
           <input

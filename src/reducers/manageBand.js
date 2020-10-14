@@ -3,8 +3,9 @@ export default function manageBand(state = {
 }, action) {
   switch(action.type) {
     case "ADD_BAND":
-      console.log(action);
-      return { bands: [...state.bands, action.payload] }
+      console.log(action.payload);
+      return { bands: [...state.bands, {name: action.payload}] }
+
     default:
       return state
   }

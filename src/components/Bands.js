@@ -6,7 +6,7 @@ const Bands = (props) => {
       <ul>
         {props.bands.map((band, index) => (
           <li key={index}>
-            {band}
+            {band.name}
           </li>
         ))}
       </ul>
