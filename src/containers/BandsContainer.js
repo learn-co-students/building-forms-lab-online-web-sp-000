@@ -14,17 +14,17 @@ class BandsContainer extends Component {
     return this.props.bands.map((band, idx) => <li key={idx}>{band.name}</li>)
   }
   
-  handleAddBand = (formData, e) => {
-    e.preventDefault()
-    this.props.addBand(formData)
-  }
+  // handleAddBand = (formData, event) => {
+  //   event.preventDefault();
+  //   this.props.addBand(formData)
+  // }
 
   render() {
     return(
       <div>
         <BandInput
-          addBand={this.handleAddBand}
-          handleChange={this.handleChange}
+          addBand={this.props.addBand}
+          
         />
         <ul>
           {this.renderBands()}
@@ -40,4 +40,9 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { addBand })(BandsContainer);
+const mapDispatchToProps = dispatch => ({
+  addBand: (band) => dispatch({ type: 'ADD_BAND', band})
+ })
+ 
+
+export default connect(mapStateToProps, mapDispatchToProps)(BandsContainer);
