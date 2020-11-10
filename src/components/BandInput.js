@@ -16,7 +16,7 @@ handleChange = e => {
 
 handleSubmit = e => {
   e.preventDefault()
-  this.props.addBand({name: this.state.name})
+  this.props.addBand(this.state.name)
   this.setState(
     {name: ""}
   )
