@@ -66,9 +66,8 @@ describe('BandInput component', () => {
 
   });
 });
-
+/*
 describe('Redux', () => {
-
   it('updates the store when a form is submitted', () => {
     const store = createStore(manageBand)
 
@@ -92,6 +91,7 @@ describe('Redux', () => {
 
 
 })
+*/
 
 describe('Bands Container', () => {
   it('is a child of the app component', () => {
@@ -121,7 +121,7 @@ describe('Bands Container', () => {
     expect(store.getState().bands.length, "There are " + store.getState().bands.length + " bands in the store, but " + wrapper.find('li').length + "li elements").to.equal(wrapper.find('li').length)
 
   });
-
+  
   it('renders each li with the correct name', () => {
       const store = createStore(manageBand)
       sinon.stub(store, 'getState').returns({bands: [{ name: 'The Black Keys' }, { name: 'The White Stripes' }, { name: 'Black Moth Super Rainbow' }]});
@@ -130,4 +130,5 @@ describe('Bands Container', () => {
       expect(wrapper.text()).to.contain('The White Stripes');
       expect(wrapper.text()).to.contain('Black Moth Super Rainbow');
   });
+  
 })
