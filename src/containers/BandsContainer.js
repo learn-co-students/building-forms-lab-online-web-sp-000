@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 class BandsContainer extends Component {
 
   render() {
+    debugger;
     return(
       <div>
         <Bands bands={this.props.bands} />
