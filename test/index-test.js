@@ -83,7 +83,7 @@ describe('Redux', () => {
     expect(store.getState().bands, "'bands' not found in the store").to.exist
     expect(store.getState().bands, "Initial state of 'bands' should be an empty array").to.be.empty
 
-    input.simulate('change', { target: { value: 'Hello' } })
+    input.simulate('change', { target: { name: 'name', value: 'Hello' } })
     form.simulate('submit',  { preventDefault() {} })
 
     expect(store.getState().bands[0].name).to.equal("Hello")
