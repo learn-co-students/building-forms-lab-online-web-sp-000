@@ -131,3 +131,5 @@ describe('Bands Container', () => {
       expect(wrapper.text()).to.contain('Black Moth Super Rainbow');
   });
 })
+
+//
