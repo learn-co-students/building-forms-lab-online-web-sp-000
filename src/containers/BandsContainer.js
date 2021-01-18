@@ -4,7 +4,7 @@ class BandsContainer extends Component {
   render() {
     return(
       <div>
-        BandsContainer
+        <h1>Band</h1>
       </div>
     )
   }
