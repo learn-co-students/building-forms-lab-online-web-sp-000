@@ -18,7 +18,7 @@ class BandInput extends Component {
 
   handleSubmit = (e)=>{
     e.preventDefault()
-    this.props.addBand(this.state.name)
+    this.props.addBand(this.state)
     this.setState({
       name: ""
     })
