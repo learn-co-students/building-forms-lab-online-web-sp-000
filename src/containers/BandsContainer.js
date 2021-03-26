@@ -5,6 +5,7 @@ import BandInput from '../components/BandInput'
 
 class BandsContainer extends Component {
   render() {
+
     let bands = this.props.bands.map((band, idx) => 
       <li key={idx}>
         {band.name}
@@ -22,7 +23,6 @@ class BandsContainer extends Component {
 }
 
 const mapStateToProps = state =>{
-
   return {
     bands: state.bands
   }
@@ -30,6 +30,7 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch => {
   return{
+
     addBand: (band) => dispatch(addBand(band))
   }
 }
