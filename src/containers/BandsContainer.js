@@ -6,7 +6,6 @@ import BandInput from '../components/BandInput'
 class BandsContainer extends Component {
   render() {
     let bands = this.props.bands.map((band, idx) => 
-    console.log(band)
       <li key={idx}>
         {band.name}
       </li>)
