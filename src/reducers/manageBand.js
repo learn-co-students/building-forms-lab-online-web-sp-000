@@ -1,5 +1,15 @@
 export default function manageBand(state = {
   bands: [],
 }, action) {
-  return state
+
+  switch(action.type) {
+    case "ADD_BAND":
+      // console.log(...state.bands.concat(action.band))
+      return [...state.bands.concat(action.band)]
+    // case ".":
+    //   return state
+    default:
+      return state;
+  }
+  
 };
