@@ -3,7 +3,7 @@ import BandsContainer from './containers/BandsContainer';
 
 class App extends Component {
   render() {
-    return (
+    return ( 
       <div className="App">
         <BandsContainer />
       </div>
