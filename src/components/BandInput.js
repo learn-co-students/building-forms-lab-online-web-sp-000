@@ -3,24 +3,22 @@ import React, { Component } from 'react';
 
 export default class BandInput extends Component {
 
-  constructor(){
-    super();
-    this.state = {
-      text: '',
-    };
-  }
+  //creating empty state with key name 
+state = {
+  name: ''
+}
 
+handleChange(e){
+  this.setState({
+    name: e.target.value
+  });
+}
+//don't forget to set state with name 
   handleSubmit = e => {
     e.preventDefault();
     this.props.addBand(this.state);
     this.setState({
-      text: '',
-    })
-  }
-
-  handleChange(e){
-    this.setState({
-      text: e.target.value
+      name: '',
     });
   }
 
@@ -28,12 +26,12 @@ export default class BandInput extends Component {
     return(
       <div>
         Band Input
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={ (e) => this.handleSubmit(e)}>
           <label>Add Band Name</label>
           <input type="text"
+                  value={this.state.name}
                   onChange={
-                    (e) => this.handleChange(e)}
-                  value={this.state.text}/>
+                    (e) => this.handleChange(e)}/>
           <input type="submit" />
         </form>
       </div>

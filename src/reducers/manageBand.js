@@ -3,16 +3,12 @@ export default function manageBand(
   state = {
     bands: [],
   }, action) {
+    //don't forget to use a separater to add band to bands 
     switch (action.type) {
       case 'ADD_BAND':
-        console.log({
-          bands: state.bands.concat(action.payload.text)
-        });
-
-    return { todos:
-      state.todos.concat(action.payload.text) };
-
-    default: 
-    return state;
-    }
+        return { ...state,
+          bands: [...state.bands, action.band] }
+          default: 
+            return state;
+        }
 };

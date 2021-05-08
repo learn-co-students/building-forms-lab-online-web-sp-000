@@ -6,30 +6,25 @@ import Band from '../components/Band';
 
 class BandsContainer extends Component {
 
-  renderBands = () => this.props.bands.map((band, id) => 
-  <Band key={id} text={band} />)
 
   render() {
     return(
       <div>
-        <BandInput addBand={this.addBand} /> 
-        {this.renderBands()}
+        <BandInput addBand={this.props.addBand} /> 
+        <Band bands={this.props.bands} />
       </div>
     )
   }
 };
 
 //pass props to state 
-const mapStateToProps = state => {
-  return {
-      bands: state.bands
-  }
-}
+const mapStateToProps = ({ bands }) => 
+({ bands })
 
 const mapDispatchToProps = dispatch => ({
-  addBand: formData => dispatch({
+  addBand: band => dispatch({
     type: 'ADD_BAND',
-    payload: formData 
+    band
   })
 })
 

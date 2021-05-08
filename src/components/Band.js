@@ -1,9 +1,18 @@
 import React from 'react'
 
-const Band = props => {
-    return (
-        <li>{props.text}</li>
-    );
-};
+//returning list of bands 
+const Bands = props => {
+    const bands = props.bands.map((band, index) => {
+        return <li key={index}>
+            {band.name}
+        </li>
+    });
 
-export default Band;
+    return (
+        <div>
+            {bands}
+        </div>
+    );
+};   
+
+export default Bands;
